@@ -1,0 +1,18 @@
+
+
+
+.container {
+    background-color: aquamarine;
+}
+
+.card{
+    background-color: coral;
+    width: 800px;
+    min-height: 100px;
+    border-radius: 30px;
+    border: 1px solid black;
+}
+
+.card-body{
+    background-color: yellow;
+}

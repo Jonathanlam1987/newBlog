@@ -1,8 +1,6 @@
-
+require('dotenv').config();
 const express = require('express');
 const expressHandlebars = require('express-handlebars')
-
-const mongoose = require('mongoose');
 
 const app = express();
 const PORT = 9999;
@@ -28,10 +26,20 @@ const articleRouter = require('./routes/articles')
 
 
 // MIDDLEWARE
+app.use(express.static(__dirname + '/public'));
 app.use('/articles', articleRouter);
 
+
+
+
+
 app.get('/', (re, res) => {
-    res.send('home')
+    const articles = [{
+        title: ' First articles',
+        createdAt: new Date(),
+        description: 'First description'
+    }]
+    res.render('home', { articles: articles })
 })
 
 
@@ -39,12 +47,7 @@ app.get('/', (re, res) => {
 
 
 
-// CONNECTING TO DB
-// mongoose.connect(
-//     process.env.CONNECTION_STRING,
-//     { useNewUrlParser: true , useUnifiedTopology: true},
-//     () => console.log('Connected To Database!')
-// )
+
 
 
 // LISTEN TO PORT
