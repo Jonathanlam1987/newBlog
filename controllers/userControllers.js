@@ -29,6 +29,11 @@ async function processSignupSubmission(req, res, next) {
   });
 }
 
+
+
+
+
+
 function renderLoginForm(req, res) {
   res.render("login", {
     layout: "main",

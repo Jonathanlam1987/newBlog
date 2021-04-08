@@ -1,16 +1,22 @@
 require('dotenv').config();
+const cookieParser = require('cookie-parser');
 const express = require('express');
 const expressHandlebars = require('express-handlebars')
 const app = express();
 const PORT = 9999;
+
+const {
+    authenticateUser,
+    validateAuthentication,
+  } = require("./middleware/authMiddleware.js");
+
 
 const {  renderSignupForm,
     processSignupSubmission,
     renderLoginForm,
     processLoginSubmission,
     processApiLoginSubmission,
-    renderLogout,} = require('./controllers/userControllers.js')
-
+    renderLogout} = require('./controllers/userControllers.js')
 
 
 
@@ -33,9 +39,9 @@ const articleRouter = require('./routes/articles')
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: false}))
 app.use('/articles', articleRouter);
-
-
-
+app.use(express.json());
+app.use(cookieParser());
+app.use(authenticateUser);
 
 app.get('/', (re, res) => {
     const articles = [{
@@ -52,7 +58,7 @@ app.get('/', (re, res) => {
 ]
     res.render('home', { articles: articles })
 })
-
+app.get('/logout', renderLogout)
 
 app.get('/signup', renderSignupForm);
 app.post('/signup', processSignupSubmission);
