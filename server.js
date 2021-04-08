@@ -1,11 +1,15 @@
 require('dotenv').config();
 const express = require('express');
 const expressHandlebars = require('express-handlebars')
-
 const app = express();
 const PORT = 9999;
 
-
+const {  renderSignupForm,
+    processSignupSubmission,
+    renderLoginForm,
+    processLoginSubmission,
+    processApiLoginSubmission,
+    renderLogout,} = require('./controllers/userControllers.js')
 
 
 
@@ -49,12 +53,12 @@ app.get('/', (re, res) => {
     res.render('home', { articles: articles })
 })
 
-app.get('/signup', (req, res) => {
-    res.render('signup')
-})
 
+app.get('/signup', renderSignupForm);
+app.post('/signup', processSignupSubmission);
 
-
+app.get('/login', renderLoginForm);
+app.post('/login', processLoginSubmission)
 
 
 

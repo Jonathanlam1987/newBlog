@@ -42,17 +42,16 @@
     height: 20px;
     border-radius: 3px;
     border: rgb(219, 208, 195);
-    outline: none;
+    
 }
 
-
 .save-btn {
-    background-color: rgb(219, 208, 195);
+    border: rgb(136, 231, 80);
     width: 80px;
     height: 20px;
     border-radius: 3px;
-    border: rgb(219, 208, 195);
-    outline: none;
+    border: rgb(136, 231, 80);
+   
 }
 
 .submit-btn {
@@ -61,7 +60,7 @@
     height: 20px;
     border-radius: 3px;
     border: rgb(136, 231, 80);
-    outline: none;
+
 }
 
 .cancel-btn {
@@ -70,5 +69,5 @@
     height: 20px;
     border-radius: 3px;
     border: rgb(219, 208, 195);
-    outline: none;
+   
 }

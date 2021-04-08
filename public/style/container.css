@@ -10,8 +10,8 @@
     background-color: rgb(235, 234, 232);
     width: 800px;
     min-height: 200px;
-    border-radius: 30px;
-    border: 1px solid black;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
     padding: 10px;
     margin: 20px;
 }
@@ -37,7 +37,28 @@
     margin: 20px;
     max-width: 400px;
     padding: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(212, 207, 207);
     opacity: 70%;
     border-radius: 20px;
+}
+
+.container-for-login {
+    position: absolute;
+    left: 70px;
+    top: 100px;
+    margin: 20px;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgb(212, 207, 207);
+    opacity: 70%;
+    border-radius: 20px;
+}
+
+textarea {
+    width: 700px;
+    height: 250px;
+}
+
+.form-group {
+    padding: 30px;
 }
