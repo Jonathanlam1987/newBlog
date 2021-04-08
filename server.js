@@ -5,17 +5,13 @@ const expressHandlebars = require('express-handlebars')
 const app = express();
 const PORT = 9999;
 
-const {
-    authenticateUser,
-    validateAuthentication,
-  } = require("./middleware/authMiddleware.js");
+
 
 
 const {  renderSignupForm,
     processSignupSubmission,
     renderLoginForm,
     processLoginSubmission,
-    processApiLoginSubmission,
     renderLogout} = require('./controllers/userControllers.js')
 
 
@@ -41,7 +37,7 @@ app.use(express.urlencoded({ extended: false}))
 app.use('/articles', articleRouter);
 app.use(express.json());
 app.use(cookieParser());
-app.use(authenticateUser);
+
 
 app.get('/', (re, res) => {
     const articles = [{

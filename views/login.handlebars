@@ -2,15 +2,20 @@
   <body>
     
     <div class="bg-img">
-      <form class="container-for-login">
+      <form class="container-for-login" action="login" method="POST">
         <h1>Login</h1>
-    
+
+          {{#if message}}
+              <p>{{message}}</p>
+            {{/if}}
+
+    <section>
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email" required>
     
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
-    
+    </section>
         <button type="submit" class="login-btn">Login</button>
        
       </form>
