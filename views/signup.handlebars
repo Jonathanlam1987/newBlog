@@ -1,0 +1,35 @@
+
+  <body>
+ 
+    <div class="bg-img">
+      <form class="container-for-signup">
+        <h1>Signup</h1>
+    
+        <form action="signup" method="POST">
+            <section>
+              {{#if message}}
+              <p>{{message}}</p>
+              {{/if}}
+
+                <label for="text"><b>Name</b></label>
+                <input type="text" placeholder="Enter name" name="name" required>
+             
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required minlength="6" maxlength="12">
+             
+
+            </section>
+
+        <button type="submit" class="submit-btn">Submit</button>
+       
+      </form>
+      <a href="/"><button class="cancel-btn">Cancel</button> </a>
+    </div>
+
+</body>
+
+
+

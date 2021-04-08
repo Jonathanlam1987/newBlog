@@ -2,17 +2,42 @@
 
 
 .container {
-    background-color: aquamarine;
+    background-color: rgb(235, 234, 232);
+    padding: 10px;
 }
 
 .card{
-    background-color: coral;
+    background-color: rgb(235, 234, 232);
     width: 800px;
-    min-height: 100px;
+    min-height: 200px;
     border-radius: 30px;
     border: 1px solid black;
+    padding: 10px;
+    margin: 20px;
 }
 
 .card-body{
-    background-color: yellow;
+    background-color: rgb(235, 234, 232);
+    width: 650px;
+    padding: 10px;
+}
+
+.signup-container {
+    background-color: chartreuse;
+    position: relative;
+    width: 200px;
+    left: 700px;
+  
+}
+
+.container-for-signup {
+    position: absolute;
+    left: 70px;
+    top: 100px;
+    margin: 20px;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    opacity: 70%;
+    border-radius: 20px;
 }

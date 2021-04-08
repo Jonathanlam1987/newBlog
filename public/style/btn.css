@@ -1,3 +1,74 @@
+.signup-btn {
+    background-color: chartreuse;
+    width: 80px;
+    height: 20px;
+    border-radius: 3px;
+    border: rgb(136, 231, 80);
+    outline: none;
+}
+
+
+.login-btn {
+    background-color: chartreuse;
+    width: 80px;
+    height: 20px;
+    border-radius: 3px;
+    border: rgb(136, 231, 80);
+    outline: none;
+}
+
+
+
 .new-btn {
     background-color: chartreuse;
+    width: 120px;
+    height: 30px;
+    border: rgb(219, 208, 195);
+}
+
+.edit-btn {
+    background-color: rgb(218, 212, 207);
+    width: 80px;
+    height: 20px;
+    margin: 10px;
+    border: rgb(219, 208, 195);
+    border-radius: 3px;
+}
+
+
+.delete-btn {
+    background-color: rgb(219, 208, 195);
+    width: 80px;
+    height: 20px;
+    border-radius: 3px;
+    border: rgb(219, 208, 195);
+    outline: none;
+}
+
+
+.save-btn {
+    background-color: rgb(219, 208, 195);
+    width: 80px;
+    height: 20px;
+    border-radius: 3px;
+    border: rgb(219, 208, 195);
+    outline: none;
+}
+
+.submit-btn {
+    background-color: chartreuse;
+    width: 80px;
+    height: 20px;
+    border-radius: 3px;
+    border: rgb(136, 231, 80);
+    outline: none;
+}
+
+.cancel-btn {
+    background-color: rgb(219, 208, 195);
+    width: 80px;
+    height: 20px;
+    border-radius: 3px;
+    border: rgb(219, 208, 195);
+    outline: none;
 }

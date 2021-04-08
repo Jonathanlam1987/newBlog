@@ -27,8 +27,8 @@ const articleRouter = require('./routes/articles')
 
 // MIDDLEWARE
 app.use(express.static(__dirname + '/public'));
+app.use(express.urlencoded({ extended: false}))
 app.use('/articles', articleRouter);
-
 
 
 
@@ -38,11 +38,20 @@ app.get('/', (re, res) => {
         title: ' First articles',
         createdAt: new Date(),
         description: 'First description'
-    }]
+    },
+    {
+        title: ' First articles',
+        createdAt: new Date(),
+        description: 'First description'
+    },
+
+]
     res.render('home', { articles: articles })
 })
 
-
+app.get('/signup', (req, res) => {
+    res.render('signup')
+})
 
 
 
