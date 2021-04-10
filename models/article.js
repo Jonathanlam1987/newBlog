@@ -10,11 +10,10 @@ const articleSchema = new Schema({
     },
     description: {
         type: String, 
-        required: true,
     },
     markdown: {
         type: String,
-        required: true,
+        required: true
     },
     createdAt: {
         type: Date, 
@@ -22,6 +21,6 @@ const articleSchema = new Schema({
     }
 });
 
-const ARTICLE = mongoose.model('Article', articleSchema);
+const Article = mongoose.model('Article', articleSchema);
 
-module.exports = ARTICLE
+module.exports = Article

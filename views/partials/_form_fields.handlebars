@@ -1,14 +1,16 @@
 <div class="form-group">
-
         {{!-- TITLE --}}
-    <label for="title"> Tite </label>
-        <input required type="text" name="title" id="title"><br>
+    <label for="title"> Title </label>
+
+        <input required value="{{article.title}}" type="text" name="title" id="title"><br>
+
         {{!-- DESCRIPTION --}}
-     <label required or="description"> Description </label><br>
-        <textarea name="description" id="description"></textarea><br>
-        {{!-- MArkdown --}}
+     <label for="description"> Description </label><br>
+        <textarea required name="description" id="description"> {{article.description}} </textarea><br>
+
+        {{!-- MARKDOWN --}}
      <label for="markdown"> Markdown </label><br>
-        <textarea name="marekdown" id="markdown"></textarea>
+        <textarea required name="markdown" id="markdown">{{article.markdown}} </textarea>
 </div>
 
 <button type="submit" class="save-btn">Save</button>

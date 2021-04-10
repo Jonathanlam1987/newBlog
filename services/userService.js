@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/user.js");
-const { auth } = require("../utils/auth.js");
+const auth = require("../utils/auth.js");
 
 const SALT_ROUNDS = 10;
 
@@ -36,13 +36,13 @@ function getUser(name) {
   return User.findOne({ name }).exec();
 }
 
-function getUserWithCart(name) {
-  return User.findOne({ name }).populate("cart").lean();
-}
+// function getUserWithCart(name) {
+//   return User.findOne({ name }).populate("cart").lean();
+// }
 
 module.exports = {
   createUser,
   loginUser,
   getUser,
-  getUserWithCart,
+
 };

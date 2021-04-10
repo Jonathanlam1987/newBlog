@@ -1,12 +1,12 @@
 require('dotenv').config();
-const cookieParser = require('cookie-parser');
 const express = require('express');
 const expressHandlebars = require('express-handlebars')
-const app = express();
-const PORT = 9999;
+const cookieParser = require('cookie-parser');
 
-
-
+const {
+    authenticateUser,
+    validateAuthentication,
+  } = require("./middleware/authMiddleware.js");
 
 const {  renderSignupForm,
     processSignupSubmission,
@@ -14,7 +14,9 @@ const {  renderSignupForm,
     processLoginSubmission,
     renderLogout} = require('./controllers/userControllers.js')
 
-
+const app = express();
+const PORT = 9999;
+    
 
 
 // CONFIG EXPRESS TO USE HANDLEBARS
@@ -25,20 +27,18 @@ app.engine('handlebars', expressHandlebars({
         partialsDir: __dirname + '/views/partials'
 }));
 
-
-
 const articleRouter = require('./routes/articles')
-
 
 
 // MIDDLEWARE
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: false}))
-app.use('/articles', articleRouter);
 app.use(express.json());
 app.use(cookieParser());
+app.use(authenticateUser);
+app.use('/articles', articleRouter);
 
-
+// ROUTING
 app.get('/', (re, res) => {
     const articles = [{
         title: ' First articles',
