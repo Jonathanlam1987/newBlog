@@ -21,15 +21,21 @@
                <h3 class="title">{{title}}</h3>
 
                 <div class="card-subtitle">
-                  <h5>{{ createdAt }}</h5>  
+                  <h5>{{createdAt}}</h5>  
                    
                 </div>
                 <div class="card-text">{{description}} 
-                
                 </div>  
+
+                <div>{{markdown}}</div>
             </div>
+            <button id={{_id}}>read more</button>
             <a href=""><button class="edit-btn">EDIT</button></a>
             <a href=""><button class="delete-btn">DELETE</button></a>
         </div>
         
     {{/each}}
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="scripts/script.js"></script>

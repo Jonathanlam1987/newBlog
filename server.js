@@ -42,7 +42,7 @@ app.use('/articles', articleRouter);
 
 // ROUTING
 app.get('/', async (re, res) => {
-    const articles = await Article.find().lean()
+    const articles = await Article.find().lean().sort({ createdAt: 'desc'})
     // TEST ARTICLE
     // const articles = [{
     //     title: ' First articles',

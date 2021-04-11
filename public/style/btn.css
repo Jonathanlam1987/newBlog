@@ -71,3 +71,13 @@
     border: rgb(219, 208, 195);
    
 }
+
+
+.complete-btn {
+    background-color: rgb(114, 238, 56);
+    width: 120px;
+    height: 20px;
+    border-radius: 3px;
+    border: rgb(219, 208, 195);
+   
+}
