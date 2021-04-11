@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const expressHandlebars = require('express-handlebars')
 const cookieParser = require('cookie-parser');
+const Article = require('./models/article')
+
 
 const {
     authenticateUser,
@@ -12,10 +14,10 @@ const {  renderSignupForm,
     processSignupSubmission,
     renderLoginForm,
     processLoginSubmission,
-    renderLogout} = require('./controllers/userControllers.js')
+    renderLogout} = require('./controllers/userController.js')
 
 const app = express();
-const PORT = 9999;
+const PORT = 8888;
     
 
 
@@ -39,19 +41,19 @@ app.use(authenticateUser);
 app.use('/articles', articleRouter);
 
 // ROUTING
-app.get('/', (re, res) => {
-    const articles = [{
-        title: ' First articles',
-        createdAt: new Date(),
-        description: 'First description'
-    },
-    {
-        title: ' First articles',
-        createdAt: new Date(),
-        description: 'First description'
-    },
-
-]
+app.get('/', async (re, res) => {
+    const articles = await Article.find().lean()
+    // TEST ARTICLE
+    // const articles = [{
+    //     title: ' First articles',
+    //     createdAt: new Date(),
+    //     description: 'First description'
+    // },
+    // {
+    //     title: ' First articles',
+    //     createdAt: new Date(),
+    //     description: 'First description'
+    // },
     res.render('home', { articles: articles })
 })
 app.get('/logout', renderLogout)
