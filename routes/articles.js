@@ -6,22 +6,22 @@ router.get('/new', (req, res) => {
     res.render('newArticle',  {article: new Article() })
 });
 
-
+// EDIT ARTICLE
+router.get('/edit/:id', async (req, res) => {
+    const article = await Article.findById(req.params.id)
+    res.render('edit', {article: new Article() })
+})
 // BEFORE APPLYING SLUG
 // router.get('/:id', async (req, res) => {
 //     const article = await Article.findById(req.params.id).lean()
 //     if (article == null) res.redirect('/')
 
-// AFTER APPLYING SLUG
     router.get('/:slug', async (req, res) => {
-        const article = await Article.findOne({slug: req.params.id}).lean()
+        const article = await Article.findOne({slug:req.params.slug}).lean()
         if (article == null) res.redirect('/')
 
     res.render('showArticle', { article: article , message: 'your entry has been saved!'})
-})
-
-
-
+});
 
 // Save article to database
 router.post('/', async (req, res) => {
@@ -40,6 +40,10 @@ router.post('/', async (req, res) => {
      } 
     
 })
+
+router.put
+
+
 // DELETED BLOG ARTICLES
 router.delete('/:id', async (req, res) => {
     await Article.findByIdAndDelete(req.params.id)

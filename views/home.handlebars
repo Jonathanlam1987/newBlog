@@ -26,12 +26,16 @@
                 </div>
                 <div class="card-text">{{description}} 
                 </div>  
-
                 <div>{{markdown}}</div>
             </div>
-            <button id={{_id}}>read more</button>
-            <a href=""><button class="edit-btn">EDIT</button></a>
-            <a href=""><button class="delete-btn">DELETE</button></a>
+            
+            <a href='articles/edit/{{_id}}'><button class="edit-btn">EDIT</button></a>
+
+            <form action='/articles/{{ _id }}?_method=DELETE'
+            method='POST'>
+            <button type='submit' class="delte-btn">Delete</button>
+            </form>
+
         </div>
         
     {{/each}}
